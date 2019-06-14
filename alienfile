@@ -4,7 +4,9 @@ probe sub { 'share' };
 
 share {
   plugin Download => (
-    url => 'https://github.com/newrelic/c-sdk/archive/v1.1.0.tar.gz',
+    url => 'https://github.com/newrelic/c-sdk/releases',
+    filter => qr/\.tar\.gz$/,
+    version => qr/v([0-9\.]+)/,
   );
   plugin Extract => 'tar.gz';
 
