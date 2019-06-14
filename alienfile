@@ -1,11 +1,28 @@
 use alienfile;
-plugin 'PkgConfig' => 'libfoo';
+
+probe sub { 'share' };
+
 share {
   plugin Download => (
-    url => 'http://...',
-    filter => qr/*\.tar\.gz$/,
-    version => qr/([0-9\.]+)/,
+    url => 'https://github.com/newrelic/c-sdk/archive/v1.1.0.tar.gz',
   );
   plugin Extract => 'tar.gz';
-  plugin 'Build::Autoconf';
+
+  build [
+    'make libnewrelic.a libnewrelic.so',
+    'mkdir -p %{.install.prefix}/lib %{.install.prefix}/include %{.install.prefix}/dynamic',
+    'cp -a libnewrelic.a %{.install.prefix}/lib',
+    'cp -a libnewrelic.so %{.install.prefix}/dynamic',
+    'cp -a include/libnewrelic.h %{.install.prefix}/include',
+  ];
+
+  gather sub {
+    my $build = shift;
+    my $prefix = $build->runtime_prop->{prefix};
+    $build->runtime_prop->{cflags}        = "-I$prefix/include ";
+    $build->runtime_prop->{cflags_static} = "-I$prefix/include ";
+    $build->runtime_prop->{libs}          = "-I$prefix/lib -lnewrelic ";
+    $build->runtime_prop->{libs_static}   = "-I$prefix/lib -lnewrelic ";
+  };
 }
+
