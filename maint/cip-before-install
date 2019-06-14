@@ -3,4 +3,4 @@
 set -ex
 
 cip sudo apt-get update
-cip sudo apt-get install libpcre3-dev
+cip sudo apt-get install -y libpcre3-dev
