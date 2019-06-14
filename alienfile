@@ -23,8 +23,8 @@ share {
     my $prefix = $build->runtime_prop->{prefix};
     $build->runtime_prop->{cflags}        = "-I$prefix/include ";
     $build->runtime_prop->{cflags_static} = "-I$prefix/include ";
-    $build->runtime_prop->{libs}          = "-I$prefix/lib -lnewrelic ";
-    $build->runtime_prop->{libs_static}   = "-I$prefix/lib -lnewrelic ";
+    $build->runtime_prop->{libs}          = "-L$prefix/lib -lnewrelic ";
+    $build->runtime_prop->{libs_static}   = "-L$prefix/lib -lnewrelic ";
   };
 }
 
