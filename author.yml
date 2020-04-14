@@ -7,6 +7,8 @@ pod_spelling_system:
   # intentionally
   stopwords:
     - libnewrelic
+    - NewRelic
+    - SDK
 
 pod_coverage:
   skip: 0
