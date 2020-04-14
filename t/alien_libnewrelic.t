@@ -1,18 +1,10 @@
 use Test2::V0 -no_srand => 1;
 use Alien::libnewrelic;
 use Test::Alien;
+use Test::Alien::Diag;
 
 alien_ok 'Alien::libnewrelic';
-
-diag '';
-diag '';
-diag '';
-diag "version = @{[ Alien::libnewrelic->version      ]}";
-diag "cflags  = @{[ Alien::libnewrelic->cflags       ]}";
-diag "libs    = @{[ Alien::libnewrelic->libs         ]}";
-diag "dll     = @{[ Alien::libnewrelic->dynamic_libs ]}";
-diag '';
-diag '';
+alien_diag 'Alien::libnewrelic';
 
 my $xs = <<'EOF';
 #include "EXTERN.h"
