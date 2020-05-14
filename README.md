@@ -1,4 +1,4 @@
-# Alien::libnewrelic [![Build Status](https://secure.travis-ci.org/plicease/Alien-libnewrelic.png)](http://travis-ci.org/plicease/Alien-libnewrelic)
+# Alien::libnewrelic [![Build Status](https://travis-ci.org/plicease/Alien-libnewrelic.svg)](http://travis-ci.org/plicease/Alien-libnewrelic)
 
 Alien to download and install libnewrelic
 
