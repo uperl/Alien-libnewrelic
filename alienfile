@@ -1,5 +1,11 @@
 use alienfile;
 
+unless($^O eq 'linux')
+{
+  print "Only Linux is supported\n";
+  exit;
+}
+
 probe sub { 'share' };
 
 share {
