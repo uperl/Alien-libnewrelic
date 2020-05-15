@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.03      2020-05-15 10:56:31 -0400
   - Removed libpcre workaround in test that would fail on
     older versions of FFI::Platypus (gh#4)
   - Use Alien::libpcre to get the PCRE library on systems
