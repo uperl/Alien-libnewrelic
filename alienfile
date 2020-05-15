@@ -9,6 +9,8 @@ unless($^O eq 'linux')
 probe sub { 'share' };
 
 share {
+  requires 'Alien::libpcre';
+
   plugin Download => (
     url => 'https://github.com/newrelic/c-sdk/releases',
     filter => qr/\.tar\.gz$/,
