@@ -32,11 +32,6 @@ ffi_ok with_subtest {
   my($ffi) = @_;
   local $@ = '';
   my $nr = eval q{ package NR::FFI;
-    local $ENV{FFI_PLATYPUS_DLERROR} = 1;
-    use  FFI::CheckLib qw( find_lib );
-    use FFI::Platypus::DL qw( dlopen dlerror RTLD_NOW RTLD_GLOBAL );
-    my($pcrelib) = find_lib(lib => 'pcre');
-    dlopen($pcrelib, RTLD_NOW | RTLD_GLOBAL) || die "error loading $pcrelib @{[ dlerror ]}";
     $ffi->attach(['newrelic_version' => 'version'] => [] => 'string');
     'NR::FFI';
   };
