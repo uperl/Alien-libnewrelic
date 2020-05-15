@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Removed libpcre workaround in test that would fail on
+    older versions of FFI::Platypus (gh#4)
 
 0.02      2020-05-14 15:00:28 -0400
   - First CPAN release
