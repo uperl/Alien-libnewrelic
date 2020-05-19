@@ -11,12 +11,11 @@ probe sub { 'share' };
 share {
   requires 'Alien::libpcre';
 
-  plugin Download => (
-    url => 'https://github.com/newrelic/c-sdk/releases',
-    filter => qr/\.tar\.gz$/,
-    version => qr/v([0-9\.]+)/,
-  );
-  plugin Extract => 'tar.gz';
+  my $version = '1.3.0';
+
+  start_url "https://github.com/newrelic/c-sdk/archive/v1.3.0.tar.gz";
+  plugin Download => ();
+  plugin Extract  => 'tar.gz';
 
   my @patch = (
     '%{patch} -p1 < %{.install.patch}/notice-error-with-stacktrace.diff',
@@ -42,6 +41,7 @@ share {
     $build->runtime_prop->{cflags_static} = "-I$prefix/include ";
     $build->runtime_prop->{libs}          = "-L$prefix/lib -lnewrelic ";
     $build->runtime_prop->{libs_static}   = "-L$prefix/lib -lnewrelic ";
+    $build->runtime_prop->{version}       = $version;
   };
 }
 
