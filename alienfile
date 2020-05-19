@@ -1,8 +1,8 @@
 use alienfile;
 
-unless($^O eq 'linux')
+unless($^O =~ /^(linux|darwin)$/)
 {
-  print "This Alien is only supported on Linux";
+  print "This Alien only works on Linux (supported by NewRelic) and macOS (not supported by NewRelic)";
   exit;
 }
 
@@ -18,11 +18,20 @@ share {
   );
   plugin Extract => 'tar.gz';
 
+  my @patch = (
+    '%{patch} -p1 < %{.install.patch}/notice-error-with-stacktrace.diff',
+  );
+  push @patch, '%{patch} -p1 < %{.install.patch}/macos.diff' if $^O eq 'darwin';
+
+  my $so = $^O eq 'linux' ? 'so' : 'dylib';
+
+  patch \@patch;
+
   build [
-    'make libnewrelic.a libnewrelic.so',
+    "make libnewrelic.a libnewrelic.$so",
     'mkdir -p %{.install.prefix}/lib %{.install.prefix}/include %{.install.prefix}/dynamic',
     'cp -a libnewrelic.a %{.install.prefix}/lib',
-    'cp -a libnewrelic.so %{.install.prefix}/dynamic',
+    'cp -a libnewrelic.$so %{.install.prefix}/dynamic',
     'cp -a include/libnewrelic.h %{.install.prefix}/include',
   ];
 
