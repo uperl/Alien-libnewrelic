@@ -13,7 +13,7 @@ use Alien::Base::Wrapper ();
 WriteMakefile(
   Alien::Base::Wrapper->new('Alien::libnewrelic')->mm_args2(
     # MakeMaker args
-    NAME => 'Kafka::Librd',
+    NAME => 'My::XS',
     ...
   ),
 );
@@ -60,7 +60,7 @@ for the use of other modules.
 
 # SEE ALSO
 
-- [NewRelic](https://metacpan.org/pod/NewRelic)
+- [NewFangle](https://metacpan.org/pod/NewFangle)
 
     Perl level bindings for this SDK.
 
