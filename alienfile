@@ -31,7 +31,7 @@ share {
     "make libnewrelic.a libnewrelic.$so",
     'mkdir -p %{.install.prefix}/lib %{.install.prefix}/include %{.install.prefix}/dynamic',
     'cp -a libnewrelic.a %{.install.prefix}/lib',
-    'cp -a libnewrelic.$so %{.install.prefix}/dynamic',
+    "cp -a libnewrelic.$so %{.install.prefix}/dynamic",
     'cp -a include/libnewrelic.h %{.install.prefix}/include',
   ];
 

@@ -14,7 +14,7 @@ use base qw( Alien::Base );
 
 =over 4
 
-=item L<NewRelic>
+=item L<NewFangle>
 
 Perl level bindings for this SDK.
 
