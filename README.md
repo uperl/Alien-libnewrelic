@@ -1,4 +1,4 @@
-# Alien::libnewrelic [![Build Status](https://api.travis-ci.com/plicease/Alien-libnewrelic.svg?branch=master)](https://travis-ci.com/github/plicease/Alien-libnewrelic)
+# Alien::libnewrelic ![linux](https://github.com/uperl/Alien-libnewrelic/workflows/linux/badge.svg) ![macos](https://github.com/uperl/Alien-libnewrelic/workflows/macos/badge.svg)
 
 Alien to download and install libnewrelic
 
