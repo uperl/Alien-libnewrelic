@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Patch to fix header guard included but unreleased in upstream (gh#9)
 
 0.06      2020-12-10 12:57:40 -0700
   - Patch to allow libnewrelic to build on clang 10 (gh#7)
