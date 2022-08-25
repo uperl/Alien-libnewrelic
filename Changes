@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.08      2022-08-25 04:26:29 -0600
   - Patch libnewrelic for use oldptr after realloc
     (based on https://github.com/newrelic/c-sdk/pull/34) (gh#13)
 
