@@ -1,2 +1,4 @@
 /Alien-libnewrelic-*
 /.build
+*.old
+*.orig
