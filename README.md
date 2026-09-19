@@ -1,4 +1,4 @@
-# Alien::libnewrelic ![linux](https://github.com/uperl/Alien-libnewrelic/workflows/linux/badge.svg) ![macos](https://github.com/uperl/Alien-libnewrelic/workflows/macos/badge.svg)
+# Alien::libnewrelic ![static](https://github.com/uperl/Alien-libnewrelic/workflows/static/badge.svg) ![linux](https://github.com/uperl/Alien-libnewrelic/workflows/linux/badge.svg) ![macos](https://github.com/uperl/Alien-libnewrelic/workflows/macos/badge.svg)
 
 Alien to download and install libnewrelic
 
