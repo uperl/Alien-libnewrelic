@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Patch libnewrelic to fix build with newer glibc that adds
+    const-correct overloads for memchr/strchr/strrchr/strstr
 
 0.08      2022-08-25 04:26:29 -0600
   - Patch libnewrelic for use oldptr after realloc
