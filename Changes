@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.09      2026-09-19 03:42:15 -0600
   - Patch libnewrelic to fix build with newer glibc that adds
     const-correct overloads for memchr/strchr/strrchr/strstr (gh#15)
 
